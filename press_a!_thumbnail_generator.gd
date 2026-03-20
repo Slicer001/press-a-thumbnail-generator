@@ -16,7 +16,6 @@ var target_picture: Image
 @onready var second_label: Label = $Display/SecondLabel
 
 #web inputs
-@onready var image_link_line_edit: LineEdit = $WebInputs/HBoxContainer/ImageLinkLineEdit
 @onready var image_download: Node = $ImageDownload
 
 # Called when the node enters the scene tree for the first time.
@@ -78,12 +77,14 @@ func _on_save_file_dialog_file_selected(path: String) -> void:
 
 #pasting links or images
 func _on_paste_button_pressed() -> void:
-	image_link_line_edit.text = DisplayServer.clipboard_get()
-	image_download.download_image(image_link_line_edit.text)
+	var clipboard = DisplayServer.clipboard_get()
+	if clipboard is String:
+		image_download.download_image(clipboard)
 
 func _on_paste_image_button_pressed() -> void:
-	var image = DisplayServer.clipboard_get_image()
-	texture_rect.texture = ImageTexture.create_from_image(image)
+	var clipboard = DisplayServer.clipboard_get_image()
+	if clipboard is Image:
+		texture_rect.texture = ImageTexture.create_from_image(clipboard)
 
 #remove HUD for screenshots
 func _on_screenshot_mode_button_pressed() -> void:
