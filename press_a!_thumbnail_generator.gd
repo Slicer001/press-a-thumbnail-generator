@@ -44,7 +44,7 @@ func update_font_size(target: Label, font_size: int) -> void:
 	target.add_theme_font_size_override("font_size", font_size)
 	if target.size.x < get_viewport_rect().size.x:
 		return
-	update_font_size(target, font_size-1)
+	update_font_size(target, font_size-8)
 
 #choose image
 func _on_choose_a_file_button_pressed() -> void:
@@ -56,11 +56,11 @@ func _on_file_dialog_file_selected(path: String) -> void:
 
 #edit text
 func _on_first_line_edit_text_changed(new_text: String) -> void:
-	first_label.text = new_text
+	first_label.text = new_text.to_lower()
 	update_font_size(first_label, 192)
 
 func _on_second_line_edit_text_changed(new_text: String) -> void:
-	second_label.text = "(" + new_text + ")"
+	second_label.text = "(" + new_text.to_lower() + ")"
 	update_font_size(second_label, 96)
 
 #save file
