@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bbsonivr11l1a"]
+
+[ext_resource type="Script" uid="uid://bfx1ccmxl8cky" path="res://press_a!_thumbnail_generator.gd" id="1_asn58"]
+[ext_resource type="FontFile" uid="uid://bwdsxp861hl" path="res://CrimsonText-Regular.ttf" id="2_smsxq"]
+
+[node name="Press A! Thumbnail Generator" type="Control" unique_id=2102535271]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_asn58")
+
+[node name="Background" type="ColorRect" parent="." unique_id=835370952]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1359315444]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=235649826]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="Display" type="VBoxContainer" parent="." unique_id=413693821]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -222.5
+offset_bottom = 158.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="FirstLabel" type="Label" parent="Display" unique_id=1537217482]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_smsxq")
+theme_override_font_sizes/font_size = 192
+text = "every star but 7"
+horizontal_alignment = 1
+
+[node name="SecondLabel" type="Label" parent="Display" unique_id=391564163]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_smsxq")
+theme_override_font_sizes/font_size = 96
+text = "(no i'm not kidding)"
+horizontal_alignment = 1
+
+[node name="Inputs" type="VBoxContainer" parent="." unique_id=1470235592]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 288.0
+offset_bottom = 133.0
+
+[node name="ChooseAFileButton" type="Button" parent="Inputs" unique_id=1075288783]
+layout_mode = 2
+text = "Choose a File"
+
+[node name="FirstLineEdit" type="LineEdit" parent="Inputs" unique_id=1089380370]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+placeholder_text = "line one"
+alignment = 1
+caret_blink = true
+
+[node name="SecondLineEdit" type="LineEdit" parent="Inputs" unique_id=1472339145]
+layout_mode = 2
+placeholder_text = "(line two)"
+alignment = 1
+caret_blink = true
+
+[node name="SaveButton" type="Button" parent="Inputs" unique_id=770155961]
+layout_mode = 2
+text = "Save Image"
+
+[node name="ChooseFileDialog" type="FileDialog" parent="." unique_id=1485576335]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 1
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png", "*.jpg")
+use_native_dialog = true
+
+[node name="SaveFileDialog" type="FileDialog" parent="." unique_id=708676096]
+access = 2
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[connection signal="pressed" from="Inputs/ChooseAFileButton" to="." method="_on_choose_a_file_button_pressed"]
+[connection signal="text_changed" from="Inputs/FirstLineEdit" to="." method="_on_first_line_edit_text_changed"]
+[connection signal="text_changed" from="Inputs/SecondLineEdit" to="." method="_on_second_line_edit_text_changed"]
+[connection signal="pressed" from="Inputs/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="file_selected" from="ChooseFileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="file_selected" from="SaveFileDialog" to="." method="_on_save_file_dialog_file_selected"]
