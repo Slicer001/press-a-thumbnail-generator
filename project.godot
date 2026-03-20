@@ -13,12 +13,13 @@ config_version=5
 config/name="Press A! Thumbnail Generator"
 run/main_scene="uid://bbsonivr11l1a"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://di65j0a573s8v"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [physics]
 
