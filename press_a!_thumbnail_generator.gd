@@ -4,6 +4,7 @@ var target_picture: Image
 
 #inputs box
 @onready var inputs: VBoxContainer = $Inputs
+@onready var web_inputs: VBoxContainer = $WebInputs
 
 #file dialogs
 @onready var choose_file_dialog: FileDialog = $ChooseFileDialog
@@ -14,6 +15,9 @@ var target_picture: Image
 @onready var first_label: Label = $Display/FirstLabel
 @onready var second_label: Label = $Display/SecondLabel
 
+#web inputs
+@onready var image_link_line_edit: LineEdit = $WebInputs/HBoxContainer/ImageLinkLineEdit
+@onready var image_download: Node = $ImageDownload
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,6 +30,7 @@ func _process(_delta: float) -> void:
 func save_image(path: String) -> void:
 	# Remove the inputs
 	inputs.hide()
+	web_inputs.hide()
 	
 	# Wait for the frame to finish rendering
 	await RenderingServer.frame_post_draw
@@ -39,6 +44,7 @@ func save_image(path: String) -> void:
 	
 	# Return the inputs
 	inputs.show()
+	web_inputs.show()
 
 func update_font_size(target: Label, font_size: int) -> void:
 	target.add_theme_font_size_override("font_size", font_size)
@@ -69,3 +75,12 @@ func _on_save_button_pressed() -> void:
 
 func _on_save_file_dialog_file_selected(path: String) -> void:
 	save_image(path)
+
+
+func _on_screenshot_mode_button_pressed() -> void:
+	inputs.hide()
+	web_inputs.hide()
+
+
+func _on_load_button_pressed() -> void:
+	image_download.download_image(image_link_line_edit.text)

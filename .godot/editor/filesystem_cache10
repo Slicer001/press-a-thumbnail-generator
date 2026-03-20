@@ -1,12 +1,8 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1774015394
+::res://::1774016008
 CrimsonText-Regular.ttf::FontFile::3406490654320009::1774009659::1774009662::1::::<><><>0<>0<>575a6107f04ead3ff5d88a1c4e8b7eda<>res://.godot/imported/CrimsonText-Regular.ttf-532c5dc34d7ffc0199c00aa02145cfde.fontdata::
-export_presets.cfg::TextFile::-1::1774015095::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1774015670::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::7786607406978254815::1774014756::1774014761::1::::<><><>0<>0<>1974bc0e4e8e088e3a4161af49a1e23e<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
-press_a!_thumbnail_generator.gd::GDScript::2786427928271743116::1774012592::0::1::::<>Control<><>0<>0<><>::
-press_a!_thumbnail_generator.tscn::PackedScene::2494642033559579888::1774015073::0::1::::<><><>0<>0<><>::uid://bfx1ccmxl8cky::::res://press_a!_thumbnail_generator.gd<>uid://bwdsxp861hl::::res://CrimsonText-Regular.ttf
-::res://docs/::1774014114
-index.apple-touch-icon.png::CompressedTexture2D::2566498705792454032::1774014114::1774013514::1::::<><><>0<>0<>0f0ea48b5a852ab724feedeb280c80b0<>res://.godot/imported/index.apple-touch-icon.png-b21a756d869f84af832970a74d8371bc.ctex::
-index.icon.png::CompressedTexture2D::6552203236676563063::1774014114::1774013514::1::::<><><>0<>0<>f14d63c354b270adcc2622e7ea3c9c26<>res://.godot/imported/index.icon.png-b92c9a802ad4b78e247784454a6b506f.ctex::
-index.png::CompressedTexture2D::644699357923950960::1774014114::1774013514::1::::<><><>0<>0<>b2a6d6f07af526fc839b0f8d2797cf58<>res://.godot/imported/index.png-0c78d14d192abe5f22f8c25928ca1ab8.ctex::
-::res://windows/::1774015309
+press_a!_thumbnail_generator.gd::GDScript::2786427928271743116::1774015636::0::1::::<>Control<><>0<>0<><>::
+press_a!_thumbnail_generator.tscn::PackedScene::2494642033559579888::1774015636::0::1::::<><><>0<>0<><>::uid://bfx1ccmxl8cky::::res://press_a!_thumbnail_generator.gd<>uid://bwdsxp861hl::::res://CrimsonText-Regular.ttf
+::res://windows/::1774015730

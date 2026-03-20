@@ -1,7 +1,10 @@
-FileDialog
+HTTPRequest
 Button
-VBoxContainer
-Label
+HBoxContainer
 LineEdit
+VBoxContainer
+Node
+FileDialog
+Label
 ColorRect
 TextureRect
