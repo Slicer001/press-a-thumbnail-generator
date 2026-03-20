@@ -76,11 +76,16 @@ func _on_save_button_pressed() -> void:
 func _on_save_file_dialog_file_selected(path: String) -> void:
 	save_image(path)
 
+#pasting links or images
+func _on_paste_button_pressed() -> void:
+	image_link_line_edit.text = DisplayServer.clipboard_get()
+	image_download.download_image(image_link_line_edit.text)
 
+func _on_paste_image_button_pressed() -> void:
+	var image = DisplayServer.clipboard_get_image()
+	texture_rect.texture = ImageTexture.create_from_image(image)
+
+#remove HUD for screenshots
 func _on_screenshot_mode_button_pressed() -> void:
 	inputs.hide()
 	web_inputs.hide()
-
-
-func _on_load_button_pressed() -> void:
-	image_download.download_image(image_link_line_edit.text)

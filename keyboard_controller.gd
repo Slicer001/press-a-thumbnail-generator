@@ -20,3 +20,19 @@ func _on_first_line_edit_focus_entered() -> void:
 
 func _on_first_line_edit_focus_exited() -> void:
 	DisplayServer.virtual_keyboard_hide()
+
+
+func _on_second_line_edit_focus_entered() -> void:
+	DisplayServer.virtual_keyboard_show(second_line_edit.text)
+
+
+func _on_second_line_edit_focus_exited() -> void:
+	DisplayServer.virtual_keyboard_hide()
+
+
+func _on_image_link_line_edit_focus_entered() -> void:
+	DisplayServer.virtual_keyboard_show(image_link_line_edit.text)
+
+
+func _on_image_link_line_edit_focus_exited() -> void:
+	DisplayServer.virtual_keyboard_hide()

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bfx1ccmxl8cky" path="res://press_a!_thumbnail_generator.gd" id="1_asn58"]
 [ext_resource type="FontFile" uid="uid://bwdsxp861hl" path="res://CrimsonText-Regular.ttf" id="2_smsxq"]
 [ext_resource type="Script" uid="uid://box6atdtdg8e0" path="res://image_download.gd" id="3_66ftc"]
-[ext_resource type="Script" uid="uid://c2vxt1j3ytygx" path="res://keyboard_controller.gd" id="4_w8y5p"]
 
 [node name="Press A! Thumbnail Generator" type="Control" unique_id=2102535271]
 layout_mode = 3
@@ -113,18 +112,15 @@ offset_right = -32.0
 offset_bottom = 72.0
 grow_horizontal = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="WebInputs" unique_id=320964013]
-custom_minimum_size = Vector2(256, 0)
-layout_mode = 2
-
-[node name="ImageLinkLineEdit" type="LineEdit" parent="WebInputs/HBoxContainer" unique_id=535031768]
-custom_minimum_size = Vector2(192, 0)
-layout_mode = 2
-
-[node name="LoadButton" type="Button" parent="WebInputs/HBoxContainer" unique_id=662786367]
+[node name="PasteLinkButton" type="Button" parent="WebInputs" unique_id=1640362714]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Load"
+text = "Paste and Load Link"
+
+[node name="PasteImageButton" type="Button" parent="WebInputs" unique_id=1809336003]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Paste and Load Image"
 
 [node name="ScreenshotModeButton" type="Button" parent="WebInputs" unique_id=1329105780]
 modulate = Color(1, 0, 0, 1)
@@ -148,16 +144,12 @@ use_native_dialog = true
 [node name="ImageDownload" type="Node" parent="." unique_id=7865722]
 script = ExtResource("3_66ftc")
 
-[node name="KeyboardController" type="Node" parent="." unique_id=806032784]
-script = ExtResource("4_w8y5p")
-
 [connection signal="pressed" from="Inputs/ChooseAFileButton" to="." method="_on_choose_a_file_button_pressed"]
-[connection signal="focus_entered" from="Inputs/FirstLineEdit" to="KeyboardController" method="_on_first_line_edit_focus_entered"]
-[connection signal="focus_exited" from="Inputs/FirstLineEdit" to="KeyboardController" method="_on_first_line_edit_focus_exited"]
 [connection signal="text_changed" from="Inputs/FirstLineEdit" to="." method="_on_first_line_edit_text_changed"]
 [connection signal="text_changed" from="Inputs/SecondLineEdit" to="." method="_on_second_line_edit_text_changed"]
 [connection signal="pressed" from="Inputs/SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="WebInputs/HBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="WebInputs/PasteLinkButton" to="." method="_on_paste_button_pressed"]
+[connection signal="pressed" from="WebInputs/PasteImageButton" to="." method="_on_paste_image_button_pressed"]
 [connection signal="pressed" from="WebInputs/ScreenshotModeButton" to="." method="_on_screenshot_mode_button_pressed"]
 [connection signal="file_selected" from="ChooseFileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_save_file_dialog_file_selected"]
